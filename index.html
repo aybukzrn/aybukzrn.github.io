@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aybüke Zeren</title>
+    <title>Aybüke Zeren — Portfolio</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Raleway:wght@300;400;500;600&family=Fira+Code:wght@300;400;500&display=swap"
         rel="stylesheet">
@@ -14,13 +14,11 @@
             --midnight: #100d2e;
             --purple-dark: #1a1040;
             --purple-mid: #3d2a7a;
-            --purple-glow: #7c4dbd;
             --violet: #9b59f5;
             --lilac: #c084fc;
             --coral: #f4845f;
             --amber: #f9a857;
             --teal-glow: #4dd9e0;
-            --soft-blue: #8ab4f8;
             --text-main: #e8e0f5;
             --text-dim: #9b8fc0;
         }
@@ -43,7 +41,7 @@
             cursor: none;
         }
 
-        /* CUSTOM CURSOR */
+        /* CURSOR */
         .cursor {
             position: fixed;
             width: 12px;
@@ -66,7 +64,7 @@
             pointer-events: none;
             z-index: 9998;
             transform: translate(-50%, -50%);
-            transition: left 0.12s ease, top 0.12s ease, opacity 0.3s;
+            transition: left 0.12s ease, top 0.12s ease;
             opacity: 0.5;
         }
 
@@ -80,29 +78,28 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 18px 48px;
-            background: linear-gradient(to bottom, rgba(10, 8, 32, 0.95), transparent);
-            backdrop-filter: blur(4px);
+            padding: 32px 54px;
+            background: linear-gradient(to bottom, rgba(10, 8, 32, 0.97), transparent);
+            backdrop-filter: blur(6px);
         }
 
         .nav-logo {
             font-family: 'Cinzel Decorative', serif;
             font-size: 1.5rem;
             color: var(--lilac);
-            letter-spacing: 0.05em;
             text-shadow: 0 0 20px var(--violet);
         }
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 28px;
             list-style: none;
         }
 
         .nav-links a {
             color: var(--text-dim);
             text-decoration: none;
-            font-size: 0.82rem;
+            font-size: .82rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
             font-weight: 500;
@@ -129,23 +126,71 @@
             width: 100%;
         }
 
-        .nav-cta {
-            background: var(--coral);
-            color: white;
-            padding: 10px 24px;
-            border-radius: 24px;
-            font-size: 0.82rem;
-            letter-spacing: 0.08em;
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* LANG TOGGLE */
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            background: rgba(155, 89, 245, 0.1);
+            border: 1px solid rgba(155, 89, 245, 0.25);
+            border-radius: 20px;
+            padding: 3px;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
             font-weight: 600;
-            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 5px 12px;
+            border-radius: 16px;
+            border: none;
+            background: transparent;
+            color: var(--text-dim);
+            cursor: none;
+            transition: all 0.25s;
+        }
+
+        .lang-btn.active {
+            background: var(--violet);
+            color: white;
+            box-shadow: 0 0 12px rgba(155, 89, 245, 0.5);
+        }
+
+        /* CV DOWNLOAD */
+        .cv-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--coral), var(--amber));
+            color: white;
+            padding: 9px 20px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
             text-decoration: none;
-            box-shadow: 0 0 24px rgba(244, 132, 95, 0.4);
+            
+            box-shadow: 0 0 20px rgba(244, 132, 95, 0.35);
             transition: box-shadow 0.3s, transform 0.2s;
         }
 
-        .nav-cta:hover {
-            box-shadow: 0 0 40px rgba(244, 132, 95, 0.7);
+        .cv-btn:hover {
+            box-shadow: 0 0 36px rgba(244, 132, 95, 0.65);
             transform: translateY(-1px);
+        }
+
+        .cv-btn svg {
+            width: 14px;
+            height: 14px;
+            fill: white;
+            flex-shrink: 0;
         }
 
         /* HERO */
@@ -168,7 +213,6 @@
                 linear-gradient(160deg, #0a0820 0%, #1a1040 40%, #0d0a2a 100%);
         }
 
-        /* Floating particles */
         .particles {
             position: absolute;
             inset: 0;
@@ -201,7 +245,6 @@
             }
         }
 
-        /* Forest silhouette */
         .forest-layer {
             position: absolute;
             bottom: 0;
@@ -216,7 +259,6 @@
             height: 100%;
         }
 
-        /* Fireflies */
         .firefly {
             position: absolute;
             width: 4px;
@@ -276,7 +318,7 @@
 
         .hero-name {
             font-family: 'Cinzel Decorative', serif;
-            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-size: clamp(2.2rem, 6vw, 4.5rem);
             line-height: 1.1;
             background: linear-gradient(135deg, #e8e0f5 0%, var(--lilac) 40%, var(--coral) 80%);
             -webkit-background-clip: text;
@@ -287,7 +329,7 @@
         }
 
         .hero-title {
-            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            font-size: clamp(0.9rem, 2.2vw, 1.25rem);
             color: var(--text-dim);
             font-weight: 300;
             letter-spacing: 0.15em;
@@ -316,7 +358,7 @@
             animation: fadeInUp 1s ease 1.1s both;
         }
 
-        .btn-primary {
+        .btn-primary, .cv-btn {
             padding: 14px 36px;
             border-radius: 30px;
             background: linear-gradient(135deg, var(--coral), var(--amber));
@@ -353,11 +395,10 @@
             transform: translateY(-3px);
         }
 
-        /* SCROLL INDICATOR */
         .scroll-hint {
             position: absolute;
             bottom: 40px;
-            left: 50%;
+            left: 48.5%;
             transform: translateX(-50%);
             display: flex;
             flex-direction: column;
@@ -402,7 +443,7 @@
             }
         }
 
-        /* SECTION COMMON */
+        /* SECTIONS */
         section {
             padding: 100px 48px;
         }
@@ -418,7 +459,7 @@
 
         .section-title {
             font-family: 'Cinzel Decorative', serif;
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
             background: linear-gradient(135deg, #e8e0f5, var(--lilac));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -428,7 +469,6 @@
 
         /* ABOUT */
         .about-section {
-            position: relative;
             background: linear-gradient(180deg, var(--deep-navy) 0%, var(--midnight) 100%);
         }
 
@@ -487,11 +527,8 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(20%) brightness(1.1);
-        }
-
-        .avatar-emoji {
-            font-size: 5rem;
+            object-position: center top;
+            display: block;
         }
 
         .about-floating-tag {
@@ -533,10 +570,10 @@
         }
 
         .about-text p {
-            font-size: 1.02rem;
+            font-size: 1rem;
             line-height: 1.9;
             color: rgba(232, 224, 245, 0.75);
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .about-text p strong {
@@ -546,8 +583,9 @@
 
         .about-stats {
             display: flex;
-            gap: 32px;
+            gap: 28px;
             margin-top: 36px;
+            flex-wrap: wrap;
         }
 
         .stat {
@@ -556,13 +594,13 @@
 
         .stat-num {
             font-family: 'Cinzel Decorative', serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--coral);
             display: block;
         }
 
         .stat-label {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             color: var(--text-dim);
             letter-spacing: 0.1em;
             text-transform: uppercase;
@@ -600,7 +638,7 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 24px;
         }
 
@@ -608,11 +646,10 @@
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(155, 89, 245, 0.15);
             border-radius: 20px;
-            padding: 32px;
+            padding: 28px;
             position: relative;
             overflow: hidden;
             transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-            cursor: default;
         }
 
         .skill-card::before {
@@ -628,27 +665,21 @@
         .skill-card:hover {
             transform: translateY(-6px);
             border-color: rgba(155, 89, 245, 0.4);
-            box-shadow: 0 20px 60px rgba(10, 8, 32, 0.5), 0 0 40px rgba(124, 77, 189, 0.1);
-        }
-
-        .skill-card-icon {
-            font-size: 2rem;
-            margin-bottom: 16px;
-            display: block;
+            box-shadow: 0 20px 60px rgba(10, 8, 32, 0.5);
         }
 
         .skill-card-title {
             font-family: 'Cinzel Decorative', serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--text-main);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .skill-card-desc {
-            font-size: 0.85rem;
+            font-size: 0.83rem;
             color: var(--text-dim);
             line-height: 1.7;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .skill-tags {
@@ -659,7 +690,7 @@
 
         .skill-tag {
             font-family: 'Fira Code', monospace;
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             padding: 4px 12px;
             border-radius: 12px;
             background: rgba(155, 89, 245, 0.1);
@@ -670,7 +701,6 @@
         /* PROJECTS */
         .projects-section {
             background: var(--deep-navy);
-            position: relative;
         }
 
         .projects-container {
@@ -698,61 +728,62 @@
         }
 
         .project-thumb {
-            height: 180px;
-            position: relative;
+            width: 100%;
+            height: 200px;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: block;
         }
 
-        .project-thumb-bg {
-            position: absolute;
-            inset: 0;
+        .project-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+            transition: transform 0.4s ease;
         }
 
-        .project-thumb-icon {
-            font-size: 3rem;
-            position: relative;
-            z-index: 1;
+        .project-card:hover .project-thumb img {
+            transform: scale(1.05);
         }
 
         .project-body {
-            padding: 28px;
+            padding: 24px;
         }
 
         .project-category {
             font-family: 'Fira Code', monospace;
-            font-size: 0.68rem;
+            font-size: 0.65rem;
             color: var(--teal-glow);
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .project-name {
             font-family: 'Cinzel Decorative', serif;
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--text-main);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             line-height: 1.4;
         }
 
         .project-desc {
-            font-size: 0.85rem;
+            font-size: 0.83rem;
             color: var(--text-dim);
             line-height: 1.7;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .project-links {
             display: flex;
             gap: 12px;
+            flex-wrap: wrap;
         }
 
         .project-link {
             font-family: 'Fira Code', monospace;
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             color: var(--violet);
             text-decoration: none;
             letter-spacing: 0.05em;
@@ -764,14 +795,6 @@
 
         .project-link:hover {
             color: var(--coral);
-        }
-
-        .project-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(30%) brightness(1.1);
-            transition: transform 0.3s;
         }
 
         /* EXPERIENCE */
@@ -801,7 +824,7 @@
 
         .timeline-item {
             position: relative;
-            margin-bottom: 48px;
+            margin-bottom: 44px;
             opacity: 0;
             transform: translateX(-20px);
             transition: opacity 0.6s ease, transform 0.6s ease;
@@ -826,32 +849,49 @@
 
         .timeline-date {
             font-family: 'Fira Code', monospace;
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             color: var(--teal-glow);
             letter-spacing: 0.15em;
             margin-bottom: 6px;
         }
 
         .timeline-role {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 600;
             color: var(--text-main);
             margin-bottom: 4px;
         }
 
         .timeline-company {
-            font-size: 0.85rem;
+            font-size: 0.83rem;
             color: var(--violet);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
-        .timeline-desc {
-            font-size: 0.88rem;
+        .timeline-list {
+            list-style: none;
+            margin-top: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .timeline-list li {
+            font-size: 0.83rem;
             color: var(--text-dim);
-            line-height: 1.75;
+            line-height: 1.6;
+            padding-left: 16px;
+            position: relative;
         }
 
-        /* AI INTEREST */
+        .timeline-list li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--coral);
+        }
+
+        /* AI / RESEARCH */
         .ai-section {
             background: var(--purple-dark);
             position: relative;
@@ -885,14 +925,12 @@
         }
 
         .ai-orb {
-            width: 260px;
-            height: 260px;
+            width: 240px;
+            height: 240px;
             border-radius: 50%;
             position: relative;
             background: radial-gradient(circle at 40% 40%, var(--teal-glow), var(--violet), var(--deep-navy));
-            box-shadow:
-                0 0 60px rgba(77, 217, 224, 0.3),
-                0 0 120px rgba(124, 77, 189, 0.2);
+            box-shadow: 0 0 60px rgba(77, 217, 224, 0.3), 0 0 120px rgba(124, 77, 189, 0.2);
             animation: orb-pulse 4s ease-in-out infinite;
         }
 
@@ -915,36 +953,37 @@
             align-items: center;
             justify-content: center;
             font-family: 'Cinzel Decorative', serif;
-            font-size: 4.1rem;
+            font-size: 1.8rem;
             color: white;
             text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px;
+            line-height: 1.6;
         }
 
-        .ai-content {}
-
         .ai-content p {
-            font-size: 0.95rem;
+            font-size: 0.93rem;
             line-height: 1.85;
             color: rgba(232, 224, 245, 0.75);
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .ai-interests {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-top: 28px;
+            gap: 10px;
+            margin-top: 24px;
         }
 
         .ai-interest-item {
             display: flex;
             align-items: center;
-            gap: 16px;
-            padding: 14px 20px;
+            gap: 14px;
+            padding: 12px 18px;
             background: rgba(77, 217, 224, 0.05);
             border: 1px solid rgba(77, 217, 224, 0.15);
             border-radius: 14px;
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             transition: background 0.3s, transform 0.2s;
         }
 
@@ -954,7 +993,8 @@
         }
 
         .ai-interest-icon {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
+            flex-shrink: 0;
         }
 
         .ai-interest-text {
@@ -964,7 +1004,7 @@
         .ai-interest-text small {
             display: block;
             color: var(--text-dim);
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             margin-top: 2px;
         }
 
@@ -979,13 +1019,8 @@
         .contact-section::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(ellipse at 30% 50%, rgba(124, 77, 189, 0.12), transparent 60%),
-                radial-gradient(ellipse at 70% 50%, rgba(77, 217, 224, 0.08), transparent 60%);
+            inset: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(124, 77, 189, 0.12), transparent 60%), radial-gradient(ellipse at 70% 50%, rgba(77, 217, 224, 0.08), transparent 60%);
             pointer-events: none;
         }
 
@@ -996,8 +1031,16 @@
             z-index: 1;
         }
 
+        .contact-buttom{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+        }
+
         .contact-intro {
-            font-size: 1.05rem;
+            font-size: 1rem;
             line-height: 1.8;
             color: rgba(232, 224, 245, 0.7);
             margin-bottom: 48px;
@@ -1007,21 +1050,21 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 16px;
-            margin-bottom: 48px;
+            gap: 14px;
+            margin-bottom: 40px;
         }
 
         .contact-card {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 16px 24px;
+            gap: 10px;
+            padding: 14px 22px;
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(155, 89, 245, 0.2);
             border-radius: 16px;
             text-decoration: none;
             color: var(--text-main);
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             transition: background 0.3s, border-color 0.3s, transform 0.2s;
         }
 
@@ -1032,12 +1075,12 @@
         }
 
         .contact-card-icon {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
 
         /* FOOTER */
         footer {
-            padding: 32px 48px;
+            padding: 28px 48px;
             border-top: 1px solid rgba(155, 89, 245, 0.1);
             display: flex;
             align-items: center;
@@ -1047,7 +1090,7 @@
 
         .footer-text {
             font-family: 'Fira Code', monospace;
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             color: var(--text-dim);
             letter-spacing: 0.08em;
         }
@@ -1058,11 +1101,6 @@
             color: var(--lilac);
         }
 
-        nav a{
-            text-decoration: none;
-        }
-
-        /* ANIMATIONS */
         @keyframes fadeInDown {
             from {
                 opacity: 0;
@@ -1087,7 +1125,6 @@
             }
         }
 
-        /* REVEAL ON SCROLL */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -1099,10 +1136,18 @@
             transform: translateY(0);
         }
 
-        /* RESPONSIVE */
+        @media (max-width: 900px) {
+
+            .about-grid,
+            .ai-container {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+        }
+
         @media (max-width: 768px) {
             nav {
-                padding: 16px 24px;
+                padding: 14px 20px;
             }
 
             .nav-links {
@@ -1110,19 +1155,21 @@
             }
 
             section {
-                padding: 80px 24px;
-            }
-
-            .about-grid,
-            .ai-container {
-                grid-template-columns: 1fr;
-                gap: 48px;
+                padding: 80px 20px;
             }
 
             footer {
                 flex-direction: column;
                 gap: 12px;
                 text-align: center;
+            }
+
+            .nav-right {
+                gap: 8px;
+            }
+
+            .cv-btn .cv-label {
+                display: none;
             }
         }
     </style>
@@ -1135,27 +1182,27 @@
 
     <!-- NAV -->
     <nav>
-        <a href="#">
-            <div class="nav-logo">✦ AybükeZeren</div>
-        </a>
+        <div class="nav-logo">✦ AybükeZeren</div>
         <ul class="nav-links">
-            <li><a href="#about">Hakkımda</a></li>
-            <li><a href="#skills">Beceriler</a></li>
-            <li><a href="#projects">Projeler</a></li>
-            <li><a href="#experience">Deneyim</a></li>
-            <li><a href="#ai">AI </a></li>
+            <li><a href="#about" data-tr="Hakkımda" data-en="About">Hakkımda</a></li>
+            <li><a href="#skills" data-tr="Beceriler" data-en="Skills">Beceriler</a></li>
+            <li><a href="#projects" data-tr="Projeler" data-en="Projects">Projeler</a></li>
+            <li><a href="#experience" data-tr="Deneyim" data-en="Experience">Deneyim</a></li>
+            <li><a href="#ai" data-tr="Araştırma" data-en="Research">Araştırma</a></li>
         </ul>
-        <a href="#contact" class="nav-cta">İletişim</a>
+        <div class="nav-right">
+            <div class="lang-toggle">
+                <button class="lang-btn active" id="btnTR" onclick="setLang('tr')">TR</button>
+                <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
+            </div>
+
+        </div>
     </nav>
 
     <!-- HERO -->
     <section class="hero" id="home">
         <div class="hero-bg"></div>
-
-        <!-- Particles container -->
         <div class="particles" id="particles"></div>
-
-        <!-- Forest silhouette -->
         <div class="forest-layer">
             <svg class="forest-svg" viewBox="0 0 1440 300" preserveAspectRatio="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -1165,7 +1212,6 @@
                         <stop offset="100%" style="stop-color:#0a0820;stop-opacity:1" />
                     </linearGradient>
                 </defs>
-                <!-- Trees -->
                 <polygon points="0,300 60,100 120,300" fill="url(#treeGrad)" />
                 <polygon points="80,300 150,60 220,300" fill="url(#treeGrad)" />
                 <polygon points="180,300 240,120 300,300" fill="url(#treeGrad)" />
@@ -1183,22 +1229,22 @@
                 <rect x="0" y="260" width="1440" height="40" fill="#0a0820" />
             </svg>
         </div>
-
         <div class="hero-content">
-            <div class="hero-badge">⟨ Software Engineer /⟩</div>
+            <div class="hero-badge" id="heroBadge">⟨ Yazılım Mühendisliği Öğrencisi /⟩</div>
             <h1 class="hero-name">Aybüke Zeren</h1>
             <p class="hero-title">Frontend Developer · <span>AI Enthusiast</span> · Web Craftsman</p>
-            <p class="hero-desc">Dijital dünyada büyülü deneyimler inşa ediyorum. Modern web teknolojileri ve yapay zeka
-                ile kullanıcıları etkileyen düşüren arayüzler tasarlıyorum.</p>
+            <p class="hero-desc" id="heroDesc">Dijital dünyada büyülü deneyimler inşa ediyorum. React, Next.js ve yapay
+                zeka teknolojileriyle kullanıcıları etkileyen arayüzler tasarlıyorum.</p>
             <div class="hero-actions">
-                <a href="#projects" class="btn-primary">Projelerimi Gör</a>
-                <a href="#contact" class="btn-secondary">Benimle Çalış</a>
+                <a href="#projects" class="btn-primary" data-tr="Projelerimi Gör" data-en="View Projects">Projelerimi
+                    Gör</a>
+                <a href="#contact" class="btn-secondary" data-tr="Benimle Çalış" data-en="Work With Me">Benimle
+                    Çalış</a>
             </div>
         </div>
-
         <div class="scroll-hint">
             <div class="scroll-line"></div>
-            <span>Kaydır</span>
+            <span data-tr="Kaydır" data-en="Scroll">Kaydır</span>
         </div>
     </section>
 
@@ -1209,36 +1255,30 @@
                 <div class="avatar-ring">
                     <div class="avatar-glow"></div>
                     <div class="avatar-inner">
-                        <img src="image.png" alt="">
+                        <img src="image.png" alt="Aybüke Zeren">
                     </div>
                 </div>
                 <div class="about-floating-tag tag-top">const me = "developer"</div>
                 <div class="about-floating-tag tag-bottom">AI.learn(everyday)</div>
             </div>
             <div class="about-text reveal">
-                <p class="section-label">// hakkımda</p>
-                <h2 class="section-title">Dİjİtal Büyücü</h2>
-                <p>Merhaba! Ben bir <strong>Yazılım Mühendisliği öğrencisiyim</strong> ve profesyonel dünyada web
-                    geliştirici olarak çalışıyorum. Kullanıcı deneyimini önceliğim olarak gören, her pikselin önemli
-                    olduğuna inanan birisiyim.</p>
-                <p><strong>Frontend geliştirme</strong> benim için sadece bir iş değil kullanıcıların ekranda gördükleri
-                    her şeyi anlamlı kılmak için bir sanat. React, modern CSS ve animasyonlar ile hayata değer katan
-                    arayüzler inşa ediyorum.</p>
-                <p>Son zamanlarda <strong>yapay zeka</strong> dünyasına derin bir ilgi duymaya başladım. Büyük dil
-                    modelleri ve prompt mühendisliği konularında kendimi geliştiriyorum.</p>
+                <p class="section-label" data-tr="// hakkımda" data-en="// about me">// hakkımda</p>
+                <h2 class="section-title" data-tr="Dijital Büyücü" data-en="Digital Sorceress">DİJİtal Büyücü</h2>
+                <p id="ab1">Merhaba! <strong>Ankara Üniversitesi Yazılım Mühendisliği</strong> 3. sınıf öğrencisiyim. 
+                    TÜBİTAK 2209-A kapsamında veri güvenliği üzerine Ar-Ge projesi yürütmekteyim.</p>
+                <p id="ab2"><strong>Frontend geliştirme</strong> benim için sadece bir iş değil, kullanıcıların ekranda
+                    gördükleri her şeyi anlamlı kılmak için bir sanat. React, modern CSS ve animasyonlar ile hayata
+                    değer katan arayüzler inşa ediyorum.</p>
+                <p id="ab3">Yerel LLM'ler ve otonom AI ajanları geliştirerek <strong>yapay zeka</strong> dünyasına katkı
+                    sunuyorum. Prompt mühendisliği ve AI destekli kod üretimi üzerine aktif olarak çalışıyorum.</p>
                 <div class="about-stats">
-                    <div class="stat">
-                        <span class="stat-num">3.</span>
-                        <span class="stat-label">Sınıf</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-num">5+</span>
-                        <span class="stat-label">Proje</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-num">∞</span>
-                        <span class="stat-label">Merak</span>
-                    </div>
+                    <div class="stat"><span class="stat-num">3.</span><span class="stat-label" data-tr="Sınıf"
+                            data-en="Year">Sınıf</span></div>
+                    <div class="stat"><span class="stat-num">3.24</span><span class="stat-label">GPA</span></div>
+                    <div class="stat"><span class="stat-num">6+</span><span class="stat-label" data-tr="Proje"
+                            data-en="Projects">Proje</span></div>
+                    <div class="stat"><span class="stat-num">∞</span><span class="stat-label" data-tr="Merak"
+                            data-en="Curiosity">Merak</span></div>
                 </div>
             </div>
         </div>
@@ -1248,51 +1288,57 @@
     <section class="skills-section" id="skills">
         <div class="skills-container">
             <div class="skills-header reveal">
-                <p class="section-label">// teknolojiler</p>
-                <h2 class="section-title">Sİlah Sandığım</h2>
+                <p class="section-label" data-tr="// teknolojiler" data-en="// technologies">// teknolojiler</p>
+                <h2 class="section-title" data-tr="Silah Sandığım" data-en="My Arsenal">Sİlah Sandığım</h2>
             </div>
             <div class="skills-grid">
-                <div class="skill-card reveal" style="--card-accent: #f4845f;">
-
+                <div class="skill-card reveal" style="--card-accent:#f4845f">
                     <h3 class="skill-card-title">Frontend</h3>
-                    <p class="skill-card-desc">Modern, hızlı ve erişilebilir kullanıcı arayüzleri oluşturma konusunda
-                        deneyimim var.</p>
+                    <p class="skill-card-desc"
+                        data-tr="Modern, hızlı ve erişilebilir kullanıcı arayüzleri oluşturma konusunda deneyimim var."
+                        data-en="Experienced in building modern, fast and accessible user interfaces.">Modern, hızlı ve
+                        erişilebilir kullanıcı arayüzleri oluşturma konusunda deneyimim var.</p>
                     <div class="skill-tags">
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Next.js</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">Tailwind</span>
-                        <span class="skill-tag">Framer Motion</span>
+                        <span class="skill-tag">React.js</span><span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">TypeScript</span><span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">HTML5</span><span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span><span class="skill-tag">Vite</span>
                     </div>
                 </div>
-                <div class="skill-card reveal" style="--card-accent: #4dd9e0;">
+                <div class="skill-card reveal" style="--card-accent:#4dd9e0">
                     <h3 class="skill-card-title">Backend & Tools</h3>
-                    <p class="skill-card-desc">Full-stack düşünce yapısıyla projeleri baştan sona yönetebiliyorum.</p>
+                    <p class="skill-card-desc"
+                        data-tr="Full-stack düşünce yapısıyla projeleri baştan sona yönetebiliyorum."
+                        data-en="I can manage projects end-to-end with a full-stack mindset.">Full-stack düşünce
+                        yapısıyla projeleri baştan sona yönetebiliyorum.</p>
                     <div class="skill-tags">
-                        <span class="skill-tag">Next.js</span>
-                        <span class="skill-tag">REST API</span>
-                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">MySQL</span><span class="skill-tag">REST API</span>
+                        <span class="skill-tag">Git / GitHub</span><span class="skill-tag">Linux</span>
+                        <span class="skill-tag">UTM / Sanallaştırma</span>
                     </div>
                 </div>
-                <!-- <div class="skill-card reveal" style="--card-accent: #9b59f5;">
-        <span class="skill-card-icon">🎨</span>
-        <h3 class="skill-card-title">UI/UX & Design</h3>
-        <p class="skill-card-desc">Tasarım duyarlılığım sayesinde kod ile görsel güzelliği harmanlıyorum.</p>
-        <div class="skill-tags">
-          <span class="skill-tag">Figma</span>
-          <span class="skill-tag">CSS Animations</span>
-          <span class="skill-tag">SVG</span>
-          <span class="skill-tag">Responsive</span>
-        </div>
-      </div> -->
-                <div class="skill-card reveal" style="--card-accent: #f9a857;">
-                    <h3 class="skill-card-title">AI & ML</h3>
-                    <p class="skill-card-desc">Yapay zeka araçlarını iş akışlarına entegre etme ve AI destekli
-                        uygulamalar geliştirme.</p>
+                <div class="skill-card reveal" style="--card-accent:#9b59f5">
+                    <h3 class="skill-card-title">AI & Research</h3>
+                    <p class="skill-card-desc"
+                        data-tr="Yerel LLM'ler ve AI ajanlarıyla çalışıyor, yapay zeka destekli uygulamalar geliştiriyorum."
+                        data-en="Working with local LLMs and AI agents, building AI-powered applications.">Yerel LLM'ler
+                        ve AI ajanlarıyla çalışıyor, yapay zeka destekli uygulamalar geliştiriyorum.</p>
                     <div class="skill-tags">
-                        <span class="skill-tag">Ollama</span>
-                        <span class="skill-tag">Prompt Eng.</span>
-                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Ollama</span><span class="skill-tag">CrewAI</span>
+                        <span class="skill-tag">Prompt Eng.</span><span class="skill-tag">Python</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal" style="--card-accent:#f9a857">
+                    <h3 class="skill-card-title" data-tr="Sistem & Ağ" data-en="Systems & Networks">Sistem & Ağ</h3>
+                    <p class="skill-card-desc"
+                        data-tr="Ağ güvenliği ve çoklu platform yönetiminde pratik deneyimim var."
+                        data-en="Hands-on experience in network security and multi-platform system management.">Ağ
+                        güvenliği ve çoklu platform yönetiminde pratik deneyimim var.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Linux</span><span class="skill-tag">Windows</span>
+                        <span class="skill-tag">macOS</span>
+                        <span class="skill-tag" data-tr="Ağ Güvenliği" data-en="Network Security">Ağ Güvenliği</span>
+                        
                     </div>
                 </div>
             </div>
@@ -1303,93 +1349,89 @@
     <section class="projects-section" id="projects">
         <div class="projects-container">
             <div class="reveal">
-                <p class="section-label">// projeler</p>
-                <h2 class="section-title">Yarattıklarım</h2>
+                <p class="section-label" data-tr="// projeler" data-en="// projects">// projeler</p>
+                <h2 class="section-title" data-tr="Yarattıklarım" data-en="What I've Built">Yarattıklarım</h2>
             </div>
             <div class="projects-grid">
 
                 <div class="project-card reveal">
-                    <div class="project-thumb">
-                        <img src="campus1.png" alt="">
-                    </div>
+                    <div class="project-thumb"><img src="stok1.png" alt="Stock Tracking"></div>
                     <div class="project-body">
-                        <p class="project-category">WebSite · HTML/CSS/JS</p>
-                        <h3 class="project-name">Campus</h3>
-                        <p class="project-desc">Akademik performans ve aktivite takip dashboard'u.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/aybukzrn/Campus" class="project-link">⌥ GitHub</a>
-                        </div>
+                        <p class="project-category">React.js · Vite · 2025</p>
+                        <h3 class="project-name" data-tr="Stok Takip Sistemi" data-en="Stock Tracking System">Stok Takip
+                            Sistemi</h3>
+                        <p class="project-desc"
+                            data-tr="Stok takibi ve ürün yönetimi sağlayan web uygulaması. Modern React hook'ları ve state yönetimi tekniklerini içeriyor."
+                            data-en="Web app for inventory and product management using modern React hooks and state management.">
+                            Stok takibi ve ürün yönetimi sağlayan web uygulaması. Modern React hook'ları ve state
+                            yönetimi tekniklerini içeriyor.</p>
+                        <div class="project-links"><a href="https://stok.akerteknikhirdavat.com/" class="project-link">⌥ Website</a></div>
                     </div>
                 </div>
 
                 <div class="project-card reveal">
-                    <div class="project-thumb">
-                        <img src="edevat1.png" alt="">
-                    </div>
+                    <div class="project-thumb"><img src="yesieat1.png" alt="Yes I Eat"></div>
                     <div class="project-body">
-                        <p class="project-category">WebSite· HTML/CSS/JS</p>
-                        <h3 class="project-name">Edevat Market</h3>
-                        <p class="project-desc">Kullanıcıların hırdavat ve alet edevat bulabileceği e-ticaret arayüzü.
-                        </p>
-                        <div class="project-links">
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card reveal">
-                    <div class="project-thumb">
-                        <img src="gimre1.png" alt="">
-                    </div>
-                    <div class="project-body">
-                        <p class="project-category">WebSite · React.js/TailwindCSS</p>
-                        <h3 class="project-name">GİMRE / Oktay Algın</h3>
-                        <p class="project-desc">Prof. Dr. Oktay Algın için tasarlanmış profesyonel kişisel web sitesi.
-                        </p>
-                        <div class="project-links">
-                            <a href="https://github.com/aybukzrn/GIMRE" class="project-link">⌥ GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card reveal">
-                    <div class="project-thumb">
-                        <img src="stok1.png" alt="">
-                    </div>
-                    <div class="project-body">
-                        <p class="project-category">WebSite · React.js</p>
-                        <h3 class="project-name">Stok Takip Sistemi</h3>
-                        <p class="project-desc">Stokları yönetmek ve takip etmek için geliştirilmiş kapsamlı bir
-                            uygulama.</p>
-                        <div class="project-links">
-                            <a href="https://stok.akerteknikhirdavat.com/" class="project-link">⌥ WebSite</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card reveal">
-                    <div class="project-thumb">
-                        <img src="vocapp1.png" alt="">
-                    </div>
-                    <div class="project-body">
-                        <p class="project-category">App</p>
-                        <h3 class="project-name">VocApp</h3>
-                        <p class="project-desc">İngilizce kelime öğrenmeyi kolaylaştıran interaktif uygulama..</p>
-                        <div class="project-links">
-                            <a href="https://github.com/aybukzrn/VocApp" class="project-link">⌥ GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card reveal">
-                    <div class="project-thumb">
-                        <img src="yesieat1.png" alt="">
-                    </div>
-                    <div class="project-body">
-                        <p class="project-category">WebSite · React.js</p>
+                        <p class="project-category">React.js · MySQL · 2025</p>
                         <h3 class="project-name">Yes I Eat</h3>
-                        <p class="project-desc">Modern ve kullanıcı dostu bir yemek sipariş platformu.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/aybukzrn/yesIeat" class="project-link">⌥ GitHub</a>
-                        </div>
+                        <p class="project-desc"
+                            data-tr="Restoranlar için dijital menü ve sipariş yönetim platformu. Admin CRUD, sipariş takibi ve 3NF/BCNF normalize veritabanı."
+                            data-en="Digital menu and order management platform for restaurants. Admin CRUD, order tracking and 3NF/BCNF normalized database.">
+                            Restoranlar için dijital menü ve sipariş yönetim platformu. Admin CRUD, sipariş takibi ve
+                            3NF/BCNF normalize veritabanı.</p>
+                        <div class="project-links"><a href="https://github.com/aybukzrn/yesIeat" class="project-link">⌥ GitHub</a></div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-thumb"><img src="vocapp1.png" alt="VocApp"></div>
+                    <div class="project-body">
+                        <p class="project-category">React · LocalStorage · 2025</p>
+                        <h3 class="project-name">VocApp</h3>
+                        <p class="project-desc"
+                            data-tr="İngilizce kelime öğrenmeyi kolaylaştıran interaktif uygulama. Aralıklı tekrar algoritmasıyla öğrenme sürecini optimize eder."
+                            data-en="Interactive vocabulary learning app with a spaced-repetition algorithm to optimise the learning process.">
+                            İngilizce kelime öğrenmeyi kolaylaştıran interaktif uygulama. Aralıklı tekrar algoritmasıyla
+                            öğrenme sürecini optimize eder.</p>
+                        <div class="project-links"><a href="https://github.com/aybukzrn/VocApp" class="project-link">⌥ GitHub</a></div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-thumb"><img src="gimre1.png" alt="GİMRE"></div>
+                    <div class="project-body">
+                        <p class="project-category">React.js · Tailwind CSS · 2026</p>
+                        <h3 class="project-name">GİMRE / Oktay Algın</h3>
+                        <p class="project-desc"
+                            data-tr="Prof. Dr. Oktay Algın için tasarlanmış profesyonel kişisel web sitesi."
+                            data-en="Professional personal website designed for Prof. Dr. Oktay Algın.">Prof. Dr. Oktay
+                            Algın için tasarlanmış profesyonel kişisel web sitesi.</p>
+                        <div class="project-links"><a href="https://github.com/aybukzrn/GIMRE" class="project-link">⌥ GitHub</a></div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-thumb"><img src="campus1.png" alt="Campus"></div>
+                    <div class="project-body">
+                        <p class="project-category">HTML · CSS · JavaScript · 2024</p>
+                        <h3 class="project-name">Campus</h3>
+                        <p class="project-desc" data-tr="Akademik performans ve aktivite takip dashboard'u."
+                            data-en="Academic performance and activity tracking dashboard.">Akademik performans ve
+                            aktivite takip dashboard'u.</p>
+                        <div class="project-links"><a href="#" class="project-link">⌥ GitHub</a></div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-thumb"><img src="edevat1.png" alt="Edevat Market"></div>
+                    <div class="project-body">
+                        <p class="project-category">HTML · CSS · JavaScript · 2024</p>
+                        <h3 class="project-name">Edevat Market</h3>
+                        <p class="project-desc"
+                            data-tr="Hırdavat ve alet edevat ürünlerinin satıldığı e-ticaret arayüzü."
+                            data-en="E-commerce interface for hardware and tool products.">Hırdavat ve alet edevat
+                            ürünlerinin satıldığı e-ticaret arayüzü.</p>
+                        <div class="project-links"><a href="#" class="project-link">⌥ GitHub</a></div>
                     </div>
                 </div>
 
@@ -1398,86 +1440,143 @@
     </section>
 
     <!-- EXPERIENCE -->
-    <!-- <section class="experience-section" id="experience">
-  <div class="experience-container">
-    <div class="reveal">
-      <p class="section-label">// deneyim</p>
-      <h2 class="section-title">Yolculuğum</h2>
-    </div>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2024 — Günümüz</div>
-        <div class="timeline-role">Frontend Developer</div>
-        <div class="timeline-company">Tech Startup • Remote</div>
-        <p class="timeline-desc">React ve Next.js kullanarak modern web uygulamaları geliştiriyorum. Kullanıcı arayüzü performansını %60 artıran optimizasyonlar gerçekleştirdim. Design system kurulumunda aktif rol aldım.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2023 — 2024</div>
-        <div class="timeline-role">Junior Web Developer</div>
-        <div class="timeline-company">Dijital Ajans • İstanbul</div>
-        <p class="timeline-desc">Kurumsal müşteriler için responsive web siteleri geliştirdim. JavaScript animasyonları ve CSS ile etkileşimli deneyimler oluşturdum. 10+ proje teslim ettim.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2022 — 2023</div>
-        <div class="timeline-role">Frontend Intern</div>
-        <div class="timeline-company">SaaS Şirketi • Ankara</div>
-        <p class="timeline-desc">React bileşenleri geliştirdim, API entegrasyonları yaptım ve kod review süreçlerine katıldım. Agile metodolojisi ile çalışmayı öğrendim.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2021 — Devam Ediyor</div>
-        <div class="timeline-role">Yazılım Mühendisliği Öğrencisi</div>
-        <div class="timeline-company">Üniversite</div>
-        <p class="timeline-desc">Algoritmalar, veri yapıları, yazılım mühendisliği prensipleri. GPA 3.7/4.0. Birden fazla hackathon'da ödül kazandım.</p>
-      </div>
-    </div>
-  </div>
-</section> -->
+    <section class="experience-section" id="experience">
+        <div class="experience-container">
+            <div class="reveal">
+                <p class="section-label" data-tr="// deneyim" data-en="// experience">// deneyim</p>
+                <h2 class="section-title" data-tr="Yolculuğum" data-en="My Journey">Yolculuğum</h2>
+            </div>
+            <div class="timeline">
 
-    <!-- AI INTEREST -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date" data-tr="Kasım 2025 — Devam Ediyor" data-en="Nov 2025 — Present">Kasım
+                        2025 — Devam Ediyor</div>
+                    <div class="timeline-role" data-tr="Kısmi Zamanlı Teknik Destek"
+                        data-en="Part-Time Technical Support">Kısmi Zamanlı Teknik Destek</div>
+                    <div class="timeline-company" data-tr="Ankara Üniversitesi — Yazılım Mühendisliği Bölümü"
+                        data-en="Ankara University — Software Engineering Dept.">ANKARA ÜNİVERSİTESİ SAĞ.KÜL.VE SPOR DAİ.BAŞK.</div>
+                    <ul class="timeline-list">
+                        <li data-tr="Bölüm laboratuvarlarındaki bilgisayar ağları ve sistem altyapısının sürekliliğini sağlıyorum."
+                            data-en="Maintaining the continuity of computer networks and system infrastructure in department labs.">
+                            Bölüm laboratuvarlarındaki bilgisayar ağları ve sistem altyapısının sürekliliğini
+                            sağlıyorum.</li>
+                        <li data-tr="Linux / Windows / macOS platformlarında donanım ve yazılım sorunlarına teknik destek sağlıyorum."
+                            data-en="Providing technical support for hardware and software issues across Linux / Windows / macOS.">
+                            Linux / Windows / macOS platformlarında donanım ve yazılım sorunlarına teknik destek
+                            sağlıyorum.</li>
+                        <li data-tr="Sistem kurulumları ve ağ güvenliği konularında pratik deneyim kazanıyorum."
+                            data-en="Gaining practical experience in system installations and network security.">Sistem
+                            kurulumları ve ağ güvenliği konularında pratik deneyim kazanıyorum.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date" data-tr="2024 — Devam Ediyor" data-en="2024 — Present">2024 — Devam
+                        Ediyor</div>
+                    <div class="timeline-role" data-tr="Proje Yürütücüsü — TÜBİTAK 2209-A"
+                        data-en="Project Lead — TÜBİTAK 2209-A">Proje Yürütücüsü — TÜBİTAK 2209-A</div>
+                    <div class="timeline-company" data-tr="Android Tabanlı Kişisel Veri Sızıntısı Tespit Uygulaması"
+                        data-en="Android-Based Personal Data Leak Detection Application">Android Tabanlı Kişisel Veri
+                        Sızıntısı Tespit Uygulaması</div>
+                    <ul class="timeline-list">
+                        <li data-tr="Android tabanlı cihazlarda kişisel veri ihlallerini tespit eden güvenlik algoritması geliştiriyorum."
+                            data-en="Developing a security algorithm that detects personal data breaches on Android-based devices.">
+                            Android tabanlı cihazlarda kişisel veri ihlallerini tespit eden güvenlik algoritması
+                            geliştiriyorum.</li>
+                        <li data-tr="Veri trafiği analizi yaparak şüpheli kalıpları belirleyen modül üzerinde çalışıyorum."
+                            data-en="Working on a module that identifies suspicious patterns through traffic analysis.">
+                            Veri trafiği analizi yaparak şüpheli kalıpları belirleyen modül üzerinde çalışıyorum.</li>
+                        <li data-tr="Proje yönetimi, literatür taraması ve teknik dokümantasyon süreçlerini yürütüyorum."
+                            data-en="Managing project administration, literature review and technical documentation.">
+                            Proje yönetimi, literatür taraması ve teknik dokümantasyon süreçlerini yürütüyorum.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date" data-tr="2023 — Devam Ediyor" data-en="2023 — Present">2023 — Devam
+                        Ediyor</div>
+                    <div class="timeline-role" data-tr="Yazılım Mühendisliği Öğrencisi"
+                        data-en="Software Engineering Student">Yazılım Mühendisliği Öğrencisi</div>
+                    <div class="timeline-company" data-tr="Ankara Üniversitesi — GPA: 3.24"
+                        data-en="Ankara University — GPA: 3.24">Ankara Üniversitesi — GPA: 3.24</div>
+                    <ul class="timeline-list">
+                        <li data-tr="Algoritmalar, veri yapıları, veritabanı yönetimi, yazılım mühendisliği prensipleri."
+                            data-en="Algorithms, data structures, database management, software engineering principles.">
+                            Algoritmalar, veri yapıları, veritabanı yönetimi, yazılım mühendisliği prensipleri.</li>
+                        <li data-tr="React, Next.js, Python ve modern web teknolojileriyle 6+ proje tamamladım."
+                            data-en="Completed 6+ projects with React, Next.js, Python and modern web technologies.">
+                            React, Next.js, Python ve modern web teknolojileriyle 6+ proje tamamladım.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2017 — 2021</div>
+                    <div class="timeline-role" data-tr="Fen Lisesi Mezunu" data-en="Science High School Graduate">
+                        Lise Mezunu</div>
+                    <div class="timeline-company">Meliha Hasanali Bostan Çubuk Fen Lisesi, Ankara</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- AI / RESEARCH -->
     <section class="ai-section" id="ai">
         <div class="ai-container">
             <div class="ai-orb-wrap reveal">
                 <div class="ai-orb">
-                    <div class="ai-orb-label">AI ✦</div>
+                    <div class="ai-orb-label">✦ AI</div>
                 </div>
             </div>
             <div class="ai-content reveal">
-                <p class="section-label">// yapay zeka</p>
-                <h2 class="section-title">Geleceğİ Görüyorum</h2>
-                <p>Yapay zeka, yazılım geliştirmenin geleceğini şekillendiriyor. Frontend dünyasında AI entegrasyonları;
-                    kullanıcı deneyimini kişiselleştiriyor, geliştirme süreçlerini hızlandırıyor.</p>
-                <p>Bu alanda kendimi sürekli geliştiriyor ve üretken AI araçlarını projelerime entegre ediyorum.</p>
+                <p class="section-label" data-tr="// araştırma & yapay zeka" data-en="// research & AI">// araştırma &
+                    yapay zeka</p>
+                <h2 class="section-title" data-tr="Geleceği İnşa Ediyorum" data-en="Building the Future">Geleceğİ İnşa
+                    edİyorum</h2>
+                <p id="aiP1">TÜBİTAK 2209-A kapsamında <strong>Android Tabanlı Kişisel Veri Sızıntısı Tespit
+                        Uygulaması</strong> üzerine Ar-Ge projesi yürütüyorum. Android cihazlarda veri ihlallerini
+                    tespit eden güvenlik algoritmaları geliştiriyorum.</p>
+                <p id="aiP2">Aynı zamanda yerel LLM'ler (Ollama) ve CrewAI kullanarak React bileşenleri üretebilen
+                    otonom yapay zeka ajanları geliştiriyorum.</p>
                 <div class="ai-interests">
-                    <!-- <div class="ai-interest-item">
-          <span class="ai-interest-icon">🔬</span>
-          <div class="ai-interest-text">
-            Büyük Dil Modelleri (LLM)
-            <small>GPT-4, Claude, Llama ile çalışma</small>
-          </div>
-        </div> -->
+                    <div class="ai-interest-item">
+                        <span class="ai-interest-icon">🔒</span>
+                        <div class="ai-interest-text">
+                            <span data-tr="Veri Güvenliği & Tespit" data-en="Data Security & Detection">Veri Güvenliği &
+                                Tespit</span>
+                            <small data-tr="Android veri trafiği analizi, şüpheli kalıp tespiti"
+                                data-en="Android traffic analysis, suspicious pattern detection">Android veri trafiği
+                                analizi, şüpheli kalıp tespiti</small>
+                        </div>
+                    </div>
+                    <div class="ai-interest-item">
+                        <span class="ai-interest-icon">🤖</span>
+                        <div class="ai-interest-text">
+                            <span data-tr="Otonom AI Ajanları" data-en="Autonomous AI Agents">Otonom AI Ajanları</span>
+                            <small>CrewAI · Ollama · Local LLM</small>
+                        </div>
+                    </div>
                     <div class="ai-interest-item">
                         <span class="ai-interest-icon">⚙️</span>
                         <div class="ai-interest-text">
-                            Prompt Mühendisliği
-                            <small>Chain-of-thought, few-shot learning</small>
+                            <span data-tr="Prompt Mühendisliği" data-en="Prompt Engineering">Prompt Mühendisliği</span>
+                            <small data-tr="Chain-of-thought, few-shot, AI kod üretimi"
+                                data-en="Chain-of-thought, few-shot, AI code generation">Chain-of-thought, few-shot, AI
+                                kod üretimi</small>
                         </div>
                     </div>
                     <div class="ai-interest-item">
                         <span class="ai-interest-icon">🌐</span>
                         <div class="ai-interest-text">
-                            AI Destekli Frontend
-                            <small>Akıllı UI bileşenleri ve kişiselleştirme</small>
-                        </div>
-                    </div>
-                    <div class="ai-interest-item">
-                        <span class="ai-interest-icon">📊</span>
-                        <div class="ai-interest-text">
-                            ML Temelleri
-                            <small>Python, scikit-learn, veri analizi</small>
+                            <span data-tr="AI Destekli Frontend" data-en="AI-Powered Frontend">AI Destekli
+                                Frontend</span>
+                            <small data-tr="Akıllı UI bileşenleri, kişiselleştirme"
+                                data-en="Smart UI components, personalisation">Akıllı UI bileşenleri,
+                                kişiselleştirme</small>
                         </div>
                     </div>
                 </div>
@@ -1489,96 +1588,139 @@
     <section class="contact-section" id="contact">
         <div class="contact-container">
             <div class="reveal">
-                <p class="section-label">// iletişim</p>
-                <h2 class="section-title">BİRLİkte Büyü Yapalım</h2>
-                <p class="contact-intro">Yeni projeler, iş birlikleri veya sadece selamlaşmak için mesaj atmaktan
-                    çekinme. Her büyük proje küçük bir konuşmayla başlar.</p>
+                <p class="section-label" data-tr="// iletişim" data-en="// contact">// iletişim</p>
+                <h2 class="section-title" data-tr="Birlikte Büyü Yapalım" data-en="Let's Create Magic">Bİrlİkte Büyü
+                    Yapalım</h2>
+                <p class="contact-intro"
+                    data-tr="Yeni projeler, iş birlikleri veya sadece selamlaşmak için mesaj atmaktan çekinme. Her büyük proje küçük bir konuşmayla başlar."
+                    data-en="Feel free to reach out for new projects, collaborations, or just to say hello. Every great project starts with a small conversation.">
+                    Yeni projeler, iş birlikleri veya sadece selamlaşmak için mesaj atmaktan çekinme. Her büyük proje
+                    küçük bir konuşmayla başlar.</p>
             </div>
             <div class="contact-cards reveal">
                 <a href="mailto:aybukezrn@gmail.com" class="contact-card">
-                    <span class="contact-card-icon">✉️</span>
-                    aybukezrn@gmail.com
+                    <span class="contact-card-icon">✉️</span> aybukezrn@gmail.com
                 </a>
-                <a href="https://www.linkedin.com/in/ayb%C3%BCke-zeren/" class="contact-card">
-                    <span class="contact-card-icon">💼</span>
-                    LinkedIn
+                <a href="tel:+905374974827" class="contact-card">
+                    <span class="contact-card-icon">📞</span> +90 537 497 48 27
                 </a>
-                <a href="https://github.com/aybukzrn" class="contact-card">
-                    <span class="contact-card-icon">🐙</span>
-                    GitHub
+                <a href="https://www.linkedin.com/in/ayb%C3%BCke-zeren/" target="_blank" class="contact-card">
+                    <span class="contact-card-icon">💼</span> LinkedIn
+                </a>
+                <a href="https://github.com/aybukzrn" target="_blank" class="contact-card">
+                    <span class="contact-card-icon">🐙</span> GitHub
                 </a>
             </div>
-            <a href="mailto:aybukezrn@gmail.com" class="btn-primary reveal">Mesaj Gönder ✦</a>
+
+            <div class="contact-buttom">
+                <a href="mailto:aybukezrn@gmail.com" class="btn-primary reveal" data-tr="Mesaj Gönder ✦"
+                    data-en="✦ Send Message">✦ Mesaj Gönder</a>
+                <a href="AybükeZerenCV.pdf" download class="cv-btn">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 16l-5-5 1.41-1.41L11 13.17V4h2v9.17l2.59-2.58L17 11l-5 5zm-7 4v-2h14v2H5z" />
+                    </svg>
+                    <span class="cv-label" data-tr="CV İndir" data-en="Download CV">CV İndir</span>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
         <div class="footer-logo">✦ AybükeZeren</div>
-        <div class="footer-text">© 2026 — Kod, merak ve büyüyle ile inşa edildi.</div>
+        <div class="footer-text" data-tr="© 2026 — Kod, merak ve büyüyle inşa edildi."
+            data-en="© 2026 — Built with code, curiosity & magic.">© 2026 — Kod, merak ve büyüyle inşa edildi.</div>
         <div class="footer-text">Ankara, Türkiye 🌙</div>
     </footer>
 
     <script>
-        // Custom cursor
+        // CURSOR
         const cursor = document.getElementById('cursor');
         const trail = document.getElementById('cursorTrail');
         document.addEventListener('mousemove', e => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            setTimeout(() => {
-                trail.style.left = e.clientX + 'px';
-                trail.style.top = e.clientY + 'px';
-            }, 80);
+            cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';
+            setTimeout(() => { trail.style.left = e.clientX + 'px'; trail.style.top = e.clientY + 'px'; }, 80);
         });
         document.querySelectorAll('a, button').forEach(el => {
             el.addEventListener('mouseenter', () => { cursor.style.transform = 'translate(-50%,-50%) scale(2.5)'; cursor.style.background = 'var(--violet)'; });
             el.addEventListener('mouseleave', () => { cursor.style.transform = 'translate(-50%,-50%) scale(1)'; cursor.style.background = 'var(--coral)'; });
         });
 
-        // Particles
-        const particlesContainer = document.getElementById('particles');
+        // PARTICLES
+        const pc = document.getElementById('particles');
         for (let i = 0; i < 30; i++) {
-            const p = document.createElement('div');
-            p.className = 'particle';
+            const p = document.createElement('div'); p.className = 'particle';
             const size = Math.random() * 4 + 2;
-            const colors = ['rgba(155,89,245,0.7)', 'rgba(244,132,95,0.7)', 'rgba(77,217,224,0.7)', 'rgba(249,168,87,0.7)'];
-            const color = colors[Math.floor(Math.random() * colors.length)];
-            const left = Math.random() * 100;
-            const duration = Math.random() * 15 + 10;
-            const delay = Math.random() * 10;
-            const drift = (Math.random() - 0.5) * 200;
-            p.style.cssText = `width:${size}px;height:${size}px;left:${left}%;background:${color};box-shadow:0 0 ${size * 3}px ${color};--drift:${drift}px;animation-duration:${duration}s;animation-delay:-${delay}s;`;
-            particlesContainer.appendChild(p);
+            const cols = ['rgba(155,89,245,0.7)', 'rgba(244,132,95,0.7)', 'rgba(77,217,224,0.7)', 'rgba(249,168,87,0.7)'];
+            const col = cols[Math.floor(Math.random() * cols.length)];
+            p.style.cssText = `width:${size}px;height:${size}px;left:${Math.random() * 100}%;background:${col};box-shadow:0 0 ${size * 3}px ${col};--drift:${(Math.random() - .5) * 200}px;animation-duration:${Math.random() * 15 + 10}s;animation-delay:-${Math.random() * 10}s;`;
+            pc.appendChild(p);
         }
 
-        // Fireflies
+        // FIREFLIES
         const hero = document.querySelector('.hero');
         for (let i = 0; i < 12; i++) {
-            const f = document.createElement('div');
-            f.className = 'firefly';
+            const f = document.createElement('div'); f.className = 'firefly';
             f.style.cssText = `left:${Math.random() * 90 + 5}%;top:${Math.random() * 60 + 20}%;animation-duration:${Math.random() * 4 + 4}s;animation-delay:-${Math.random() * 6}s;`;
             hero.appendChild(f);
         }
 
-        // Scroll reveal
-        const revealEls = document.querySelectorAll('.reveal, .timeline-item');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.12 });
-        revealEls.forEach(el => observer.observe(el));
+        // SCROLL REVEAL
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal, .timeline-item').forEach(el => obs.observe(el));
+        document.querySelectorAll('.skill-card').forEach((c, i) => { c.style.transitionDelay = (i * 0.1) + 's'; });
+        document.querySelectorAll('.project-card').forEach((c, i) => { c.style.transitionDelay = (i * 0.08) + 's'; });
 
-        // Stagger skill cards
-        document.querySelectorAll('.skill-card').forEach((c, i) => {
-            c.style.transitionDelay = (i * 0.1) + 's';
-        });
-        document.querySelectorAll('.project-card').forEach((c, i) => {
-            c.style.transitionDelay = (i * 0.12) + 's';
-        });
+        // ─── LANGUAGE TOGGLE ───────────────────────────────────────────────────────
+        const CONTENT = {
+            heroBadge: {
+                tr: '⟨ Yazılım Mühendisliği Öğrencisi /⟩',
+                en: '⟨ Software Engineering Student /⟩'
+            },
+            heroDesc: {
+                tr: 'Dijital dünyada büyülü deneyimler inşa ediyorum. React, Next.js ve yapay zeka teknolojileriyle kullanıcıları etkileyen arayüzler tasarlıyorum.',
+                en: 'I build magical experiences in the digital world. I design impactful interfaces with React, Next.js and AI technologies.'
+            },
+            ab1: {
+                tr: 'Merhaba! <strong>Ankara Üniversitesi Yazılım Mühendisliği</strong> 3. sınıf öğrencisiyim (GPA: 3.24). TÜBİTAK 2209-A kapsamında veri güvenliği üzerine Ar-Ge projesi yürütmekteyim.',
+                en: 'Hi! I\'m a 3rd-year <strong>Software Engineering</strong> student at Ankara University (GPA: 3.24). I\'m conducting an R&D project on data security within TÜBİTAK 2209-A.'
+            },
+            ab2: {
+                tr: '<strong>Frontend geliştirme</strong> benim için sadece bir iş değil; kullanıcıların ekranda gördükleri her şeyi anlamlı kılmak için bir sanat. React, modern CSS ve animasyonlar ile hayata değer katan arayüzler inşa ediyorum.',
+                en: '<strong>Frontend development</strong> is not just work for me — it\'s an art of making everything the user sees meaningful. I build value-driven interfaces with React, modern CSS and animations.'
+            },
+            ab3: {
+                tr: 'Yerel LLM\'ler ve otonom AI ajanları geliştirerek <strong>yapay zeka</strong> dünyasına katkı sunuyorum. Prompt mühendisliği ve AI destekli kod üretimi üzerine aktif olarak çalışıyorum.',
+                en: 'I contribute to the <strong>AI</strong> world by developing local LLMs and autonomous AI agents. I actively work on prompt engineering and AI-powered code generation.'
+            },
+            aiP1: {
+                tr: 'TÜBİTAK 2209-A kapsamında <strong>Android Tabanlı Kişisel Veri Sızıntısı Tespit Uygulaması</strong> üzerine Ar-Ge projesi yürütüyorum. Android cihazlarda veri ihlallerini tespit eden güvenlik algoritmaları geliştiriyorum.',
+                en: 'Under TÜBİTAK 2209-A, I lead an R&D project on an <strong>Android-Based Personal Data Leak Detection Application</strong>. I develop security algorithms that detect data breaches on Android devices.'
+            },
+            aiP2: {
+                tr: 'Aynı zamanda yerel LLM\'ler (Ollama) ve CrewAI kullanarak React bileşenleri üretebilen otonom yapay zeka ajanları geliştiriyorum.',
+                en: 'I also build autonomous AI agents using local LLMs (Ollama) and CrewAI that can generate React components.'
+            }
+        };
+
+        function setLang(lang) {
+            document.getElementById('btnTR').classList.toggle('active', lang === 'tr');
+            document.getElementById('btnEN').classList.toggle('active', lang === 'en');
+            document.documentElement.lang = lang;
+
+            // Rich-text elements
+            Object.entries(CONTENT).forEach(([id, vals]) => {
+                const el = document.getElementById(id);
+                if (el) el.innerHTML = vals[lang];
+            });
+
+            // Simple data-tr / data-en elements
+            document.querySelectorAll('[data-tr][data-en]').forEach(el => {
+                el.textContent = el.getAttribute('data-' + lang);
+            });
+        }
     </script>
 </body>
 
