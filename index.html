@@ -10,11 +10,11 @@
         rel="stylesheet">
     <style>
         :root {
-            --deep-navy: #0a0820;
-            --midnight: #100d2e;
-            --purple-dark: #1a1040;
+            --deep-navy: #050418;
+            --midnight: #10194e;
+            --purple-dark: #3b2d76;
             --purple-mid: #3d2a7a;
-            --violet: #9b59f5;
+            --violet: #6f3fb1;
             --lilac: #c084fc;
             --coral: #f4845f;
             --amber: #f9a857;
@@ -84,7 +84,7 @@
         }
 
         .nav-logo {
-            font-family: 'Cinzel Decorative', serif;
+            font-family: 'Cormorant Garamond', serif;
             font-size: 1.5rem;
             color: var(--lilac);
             text-shadow: 0 0 20px var(--violet);
@@ -317,7 +317,7 @@
         }
 
         .hero-name {
-            font-family: 'Cinzel Decorative', serif;
+            font-family: 'Cormorant Garamond', serif;
             font-size: clamp(2.2rem, 6vw, 4.5rem);
             line-height: 1.1;
             background: linear-gradient(135deg, #e8e0f5 0%, var(--lilac) 40%, var(--coral) 80%);
@@ -458,7 +458,7 @@
         }
 
         .section-title {
-            font-family: 'Cinzel Decorative', serif;
+            font-family: 'Cormorant Garamond', serif;
             font-size: clamp(1.8rem, 4vw, 2.6rem);
             background: linear-gradient(135deg, #e8e0f5, var(--lilac));
             -webkit-background-clip: text;
@@ -593,7 +593,7 @@
         }
 
         .stat-num {
-            font-family: 'Cinzel Decorative', serif;
+            font-family: 'Cormorant Garamond', serif;
             font-size: 1.8rem;
             color: var(--coral);
             display: block;
@@ -669,10 +669,11 @@
         }
 
         .skill-card-title {
-            font-family: 'Cinzel Decorative', serif;
+            font-family: 'Cormorant Garamond', serif;
             font-size: 0.95rem;
             color: var(--text-main);
             margin-bottom: 10px;
+            
         }
 
         .skill-card-desc {
@@ -688,6 +689,12 @@
             gap: 8px;
         }
 
+        .skill-tag:hover {
+            background: rgba(155, 89, 245, 0.15);
+            border-color: rgba(155, 89, 245, 0.35);
+            color: var(--text-main);
+        }
+
         .skill-tag {
             font-family: 'Fira Code', monospace;
             font-size: 0.68rem;
@@ -700,7 +707,8 @@
 
         /* PROJECTS */
         .projects-section {
-            background: var(--deep-navy);
+            background: linear-gradient(180deg, var(--midnight) 30%, var(--violet) 100%);
+             position: relative;
         }
 
         .projects-container {
@@ -761,7 +769,7 @@
         }
 
         .project-name {
-            font-family: 'Cinzel Decorative', serif;
+            font-family: 'Cormorant Garamond', serif;
             font-size: 1rem;
             color: var(--text-main);
             margin-bottom: 8px;
@@ -799,7 +807,7 @@
 
         /* EXPERIENCE */
         .experience-section {
-            background: linear-gradient(180deg, var(--midnight) 0%, var(--deep-navy) 100%);
+            background: linear-gradient(180deg, var(--violet) 0%, var(--deep-navy) 90%);
         }
 
         .experience-container {
@@ -815,7 +823,7 @@
         .timeline::before {
             content: '';
             position: absolute;
-            left: 7px;
+            left: 9px;
             top: 0;
             bottom: 0;
             width: 1px;
@@ -844,7 +852,7 @@
             border-radius: 50%;
             background: var(--coral);
             box-shadow: 0 0 16px rgba(244, 132, 95, 0.6);
-            border: 2px solid var(--deep-navy);
+            border: 2px solid var(--coral);
         }
 
         .timeline-date {
@@ -864,7 +872,7 @@
 
         .timeline-company {
             font-size: 0.83rem;
-            color: var(--violet);
+            color: var(--text-dim);
             margin-bottom: 10px;
         }
 
@@ -893,7 +901,7 @@
 
         /* AI / RESEARCH */
         .ai-section {
-            background: var(--purple-dark);
+            background: linear-gradient(180deg, var(--deep-navy) 0%, var(--purple-dark) ,var(--deep-navy) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -952,7 +960,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Cinzel Decorative', serif;
+            font-family: 'Cormorant Garamond', serif;
             font-size: 1.8rem;
             color: white;
             text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
@@ -1076,6 +1084,15 @@
 
         .contact-card-icon {
             font-size: 1.2rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .contact-card-icon img{
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
         }
 
         /* FOOTER */
@@ -1096,7 +1113,7 @@
         }
 
         .footer-logo {
-            font-family: 'Cinzel Decorative', serif;
+            font-family: 'Cormorant Garamond', serif;
             font-size: 0.9rem;
             color: var(--lilac);
         }
@@ -1255,7 +1272,7 @@
                 <div class="avatar-ring">
                     <div class="avatar-glow"></div>
                     <div class="avatar-inner">
-                        <img src="image.png" alt="Aybüke Zeren">
+                        <img src="profil.png" alt="Aybüke Zeren">
                     </div>
                 </div>
                 <div class="about-floating-tag tag-top">const me = "developer"</div>
@@ -1263,7 +1280,7 @@
             </div>
             <div class="about-text reveal">
                 <p class="section-label" data-tr="// hakkımda" data-en="// about me">// hakkımda</p>
-                <h2 class="section-title" data-tr="Dijital Büyücü" data-en="Digital Sorceress">DİJİtal Büyücü</h2>
+                <h2 class="section-title" data-tr="Dijital Büyücü" data-en="Digital Sorceress">Dijital Büyücü</h2>
                 <p id="ab1">Merhaba! <strong>Ankara Üniversitesi Yazılım Mühendisliği</strong> 3. sınıf öğrencisiyim. 
                     TÜBİTAK 2209-A kapsamında veri güvenliği üzerine Ar-Ge projesi yürütmekteyim.</p>
                 <p id="ab2"><strong>Frontend geliştirme</strong> benim için sadece bir iş değil, kullanıcıların ekranda
@@ -1289,7 +1306,7 @@
         <div class="skills-container">
             <div class="skills-header reveal">
                 <p class="section-label" data-tr="// teknolojiler" data-en="// technologies">// teknolojiler</p>
-                <h2 class="section-title" data-tr="Silah Sandığım" data-en="My Arsenal">Sİlah Sandığım</h2>
+                <h2 class="section-title" data-tr="Silah Sandığım" data-en="My Arsenal">Beceri Araçlarım</h2>
             </div>
             <div class="skills-grid">
                 <div class="skill-card reveal" style="--card-accent:#f4845f">
@@ -1418,7 +1435,7 @@
                         <p class="project-desc" data-tr="Akademik performans ve aktivite takip dashboard'u."
                             data-en="Academic performance and activity tracking dashboard.">Akademik performans ve
                             aktivite takip dashboard'u.</p>
-                        <div class="project-links"><a href="#" class="project-link">⌥ GitHub</a></div>
+                        <div class="project-links"><a href="https://github.com/aybukzrn/Campus" class="project-link">⌥ GitHub</a></div>
                     </div>
                 </div>
 
@@ -1431,7 +1448,7 @@
                             data-tr="Hırdavat ve alet edevat ürünlerinin satıldığı e-ticaret arayüzü."
                             data-en="E-commerce interface for hardware and tool products.">Hırdavat ve alet edevat
                             ürünlerinin satıldığı e-ticaret arayüzü.</p>
-                        <div class="project-links"><a href="#" class="project-link">⌥ GitHub</a></div>
+                        
                     </div>
                 </div>
 
@@ -1535,8 +1552,8 @@
             <div class="ai-content reveal">
                 <p class="section-label" data-tr="// araştırma & yapay zeka" data-en="// research & AI">// araştırma &
                     yapay zeka</p>
-                <h2 class="section-title" data-tr="Geleceği İnşa Ediyorum" data-en="Building the Future">Geleceğİ İnşa
-                    edİyorum</h2>
+                <h2 class="section-title" data-tr="Geleceği İnşa Ediyorum" data-en="Building the Future">Geleceği İnşa
+                    Ediyorum</h2>
                 <p id="aiP1">TÜBİTAK 2209-A kapsamında <strong>Android Tabanlı Kişisel Veri Sızıntısı Tespit
                         Uygulaması</strong> üzerine Ar-Ge projesi yürütüyorum. Android cihazlarda veri ihlallerini
                     tespit eden güvenlik algoritmaları geliştiriyorum.</p>
@@ -1589,7 +1606,7 @@
         <div class="contact-container">
             <div class="reveal">
                 <p class="section-label" data-tr="// iletişim" data-en="// contact">// iletişim</p>
-                <h2 class="section-title" data-tr="Birlikte Büyü Yapalım" data-en="Let's Create Magic">Bİrlİkte Büyü
+                <h2 class="section-title" data-tr="Birlikte Büyü Yapalım" data-en="Let's Create Magic">Birlikte Büyü
                     Yapalım</h2>
                 <p class="contact-intro"
                     data-tr="Yeni projeler, iş birlikleri veya sadece selamlaşmak için mesaj atmaktan çekinme. Her büyük proje küçük bir konuşmayla başlar."
@@ -1599,25 +1616,19 @@
             </div>
             <div class="contact-cards reveal">
                 <a href="mailto:aybukezrn@gmail.com" class="contact-card">
-                    <span class="contact-card-icon">✉️</span> aybukezrn@gmail.com
+                    <span class="contact-card-icon"><img src="gmail.svg" alt=""></span> aybukezrn@gmail.com
                 </a>
                 <a href="https://www.linkedin.com/in/ayb%C3%BCke-zeren/" target="_blank" class="contact-card">
-                    <span class="contact-card-icon">💼</span> LinkedIn
+                    <span class="contact-card-icon"><img src="linkedin.svg" alt=""></span> LinkedIn
                 </a>
                 <a href="https://github.com/aybukzrn" target="_blank" class="contact-card">
-                    <span class="contact-card-icon">🐙</span> GitHub
+                    <span class="contact-card-icon"><img src="github.svg" alt=""></span> GitHub
                 </a>
             </div>
 
             <div class="contact-buttom">
                 <a href="mailto:aybukezrn@gmail.com" class="btn-primary reveal" data-tr="Mesaj Gönder ✦"
                     data-en="✦ Send Message">✦ Mesaj Gönder</a>
-                <a href="AybükeZerenCV.pdf" download class="cv-btn">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 16l-5-5 1.41-1.41L11 13.17V4h2v9.17l2.59-2.58L17 11l-5 5zm-7 4v-2h14v2H5z" />
-                    </svg>
-                    <span class="cv-label" data-tr="CV İndir" data-en="Download CV">CV İndir</span>
-                </a>
             </div>
         </div>
     </section>
